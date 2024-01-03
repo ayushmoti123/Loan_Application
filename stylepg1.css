@@ -1,0 +1,39 @@
+*{
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+.one{
+        color:rosybrown;   
+}
+#check{
+    width:100%;
+    padding: 70px 0;
+}
+.bg {
+    background-image: url('th1.jpg');
+    width:100%;
+    height:1787px;
+    z-index: 1;
+    left: -2px;
+    top: -50px;
+    position: absolute;
+    grid-row-align:center;
+    grid-column-align:center;
+}
+.container {
+    display:inline-flexbox;
+    padding-left:10px;
+}
+.button {
+    border-radius:25px;
+}
+.container2 {
+    background-image: url('bg(2).jpeg');
+    background-size:cover;
+    width:100%;
+    height:100%;
+}
+.panel {
+   border-radius:25px;
+
+}
