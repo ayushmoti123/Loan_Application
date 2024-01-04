@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 609px; top: 422px; position: absolute" Text="Apply for a HomeLoan" OnClick="Button1_Click" Visible="False" />
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 609px; top: 422px; position: absolute" Text="Apply for a HomeLoan"  Visible="False" />
     
         <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 609px; top: 523px; position: absolute" Text="Check your loan status" Visible="False" />
     

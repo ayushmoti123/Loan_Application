@@ -19,7 +19,7 @@ public partial class account : System.Web.UI.Page
         Label1.Text = "Welcome " + Session["Username"];
         con = new SqlConnection(@"Data Source =(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database2.mdf;Integrated Security=True");
         con.Open();
-        string s = "select * from Loan_app where username='" + Session["Username"] + "'";
+        string s = "select * from Loan_app where name='" + Session["Username"] + "'";
         com = new SqlCommand(s, con);
         com.ExecuteNonQuery();
         adpt = new SqlDataAdapter();
@@ -28,7 +28,7 @@ public partial class account : System.Web.UI.Page
         adpt.Fill(ds, "Loan_app");
         if (ds.Tables["Loan_app"].Rows.Count == 0)
         {
-            Button1.Visible = true;
+            Response.Redirect("new_application.aspx");
         }
         else
         {
@@ -36,8 +36,5 @@ public partial class account : System.Web.UI.Page
         }
         con.Close();
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("new_application.aspx");
-    }
+   
 }

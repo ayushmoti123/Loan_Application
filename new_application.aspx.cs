@@ -36,7 +36,7 @@ public partial class new_application : System.Web.UI.Page
         con.Open();
         if (TextBox5.Text.Length==0)
         {
-            string s = "Insert into Loan_app values(" + "'" + Session["uid"].ToString() + "'," +"'"+ System.DateTime.Now + "',"+"'" + DropDownList1.Text + "'," + "'" + TextBox2.Text + "'," + "'"+TextBox3.Text +"',"+"'" + DropDownList2.Text + "'," + "'" + DropDownList3.Text + "'," + "'" + TextBox4.Text + "'" + ")";
+            string s = "Insert into Loan_app values(" + "'" + Session["uid"].ToString() + "'," +"'"+ System.DateTime.Now + "',"+"'" + DropDownList1.Text + "'," + "'" + TextBox2.Text + "'," + "'"+TextBox3.Text +"',"+"'" + DropDownList2.Text + "'," + "'" + DropDownList3.Text + "',"  + TextBox4.Text + "," +"'"+Session["Username"]+"'"+ ")";
             com = new SqlCommand(s, con);
             com.ExecuteNonQuery();
             con.Close();
@@ -44,7 +44,7 @@ public partial class new_application : System.Web.UI.Page
         }
         else
         {
-            string s = "Insert into Loan_app values(" + "'" + Session["uid"] + "'," +"'"+ System.DateTime.Now + "',"+"'" + DropDownList1.Text + "'," + "'" + TextBox2.Text + "'," + "'"+TextBox3.Text +"',"+ "'" + TextBox5.Text + "'," + "'" + DropDownList3.Text + "'," + "'" + TextBox4.Text + "'" + ")";
+            string s = "Insert into Loan_app values(" + "'" + Session["uid"] + "'," +"'"+ System.DateTime.Now + "',"+"'" + DropDownList1.Text + "'," + "'" + TextBox2.Text + "'," + "'"+TextBox3.Text +"',"+ "'" + TextBox5.Text + "'," + "'" + DropDownList3.Text + "',"  + TextBox4.Text + ","+"'"+Session["Username"]+"'" + ")";
             com = new SqlCommand(s, con);
             com.ExecuteNonQuery();
             con.Close();
