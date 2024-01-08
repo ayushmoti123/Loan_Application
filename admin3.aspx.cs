@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 public partial class admin3 : System.Web.UI.Page
 {
-    SqlConnection con,con2,con3;
+    SqlConnection con,con2,con3,con4;
     SqlCommand com;
     SqlDataAdapter adpt;
     DataSet2 ds;
@@ -59,7 +59,34 @@ public partial class admin3 : System.Web.UI.Page
             string insert = "Insert into Ongoing_loans values(" + "'" + name + "'," + "'" + val + "'," + amt + "," + total + "," + monthly + "," + overdue + ",'" + System.DateTime.Now + "'" + ")";
             com = new SqlCommand(insert, con3);
             com.ExecuteNonQuery();
+            string del = "Delete from Loan_app where usernumber='"+TextBox2.Text+"'";
+            com = new SqlCommand(del, con3);
+            com.ExecuteNonQuery();
             con3.Close();
+            con4 = new SqlConnection(@"Data Source =(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database2.mdf;Integrated Security=True");
+            con4.Open();
+            string status="Select count(*) from status where ref_no='"+val+"'";
+            com = new SqlCommand(status, con4);
+            int count = (int)com.ExecuteScalar();
+            if (count == 0)
+            {
+                string insert2 = "Insert into status values('" + val + "'," + total + "," + monthly + "," + overdue + "," + "'" + null + "')";
+                com = new SqlCommand(insert2, con4);
+                com.ExecuteNonQuery();
+                con4.Close();
+
+            }
+            else
+            {
+                string insert2 = "Insert into status values('" + val + "'," + total + "," + monthly + "," + overdue + "," + "'" + System.DateTime.Now + "')";
+                com = new SqlCommand(insert2, con4);
+                com.ExecuteNonQuery();
+                con4.Close();
+            }
+
+
+
+            
             Response.Write("<script language= javascript> alert('Loan Approved suucessfully')</script>");
 
         }

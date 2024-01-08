@@ -10,7 +10,15 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 609px; top: 422px; position: absolute" Text="Apply for a HomeLoan"  Visible="False" />
+        <asp:Panel ID="Panel2" runat="server" style="z-index: 1; left: 13px; top: 691px; position: absolute; height: 409px; width: 1569px" Visible="False">
+            <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 166px; top: 256px; position: absolute" Text="Label"></asp:Label>
+            <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 262px; top: 257px; position: absolute" TextMode="Number"></asp:TextBox>
+            <asp:Button ID="Button3" runat="server" style="z-index: 1; left: 290px; top: 314px; position: absolute; right: 1236px;" Text="Pay" OnClick="Button3_Click" />
+        </asp:Panel>
+        <asp:GridView ID="GridView1" runat="server" style="z-index: 1; left: 237px; top: 727px; position: absolute; height: 152px; width: 232px">
+        </asp:GridView>
+    
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 609px; top: 422px; position: absolute" Text="Apply for a HomeLoan"  Visible="False"  />
     
         <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 609px; top: 523px; position: absolute" Text="Check your loan status" Visible="False" />
     
